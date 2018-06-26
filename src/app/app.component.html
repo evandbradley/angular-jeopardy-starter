@@ -5,4 +5,19 @@
   </h1>
 </div>
 
+<div>
+  Current score: {{score}}
+</div>
+<br>
+
+<b>Categories (select one):</b> <br>
+<div *ngFor="let question of questions" (click)="select(question)">{{question.category.title}}</div>
+
+<br>
+
 <b>The Question:</b> {{questionInfo?.question}} <br>
+<b>The Answer:</b> {{questionInfo?.answer}} <br>
+<b>Points:</b> {{questionInfo?.value}} <br>
+
+<input [(ngModel)]="answer" />
+<button (click)="check()">Check</button>
